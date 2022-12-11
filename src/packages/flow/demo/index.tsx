@@ -8,6 +8,7 @@ import ReactFlow, {
     useNodesState,
     useEdgesState,
 } from '~/packages/flow';
+import { v4 as uuidv4 } from 'uuid';
 
 import { nodes as initialNodes, edges as initialEdges } from './initial-elements';
 import CustomNode from './CustomNode';
@@ -25,8 +26,7 @@ const minimapStyle = {
     height: 120,
 };
 
-let id = 0;
-const getId = () => `dndnode_${id++}`;
+const getId = () => `dndnode_${uuidv4()}`;
 
 const onInit = (reactFlowInstance) => console.log('flow loaded:', reactFlowInstance);
 
@@ -72,7 +72,7 @@ const OverviewFlow = () => {
     // this could also be done with a custom edge for example
     const edgesWithUpdatedTypes = edges.map((edge) => {
         if (edge.sourceHandle) {
-            const edgeType = nodes.find((node) => node.type === 'custom').data.selects[edge.sourceHandle];
+            const edgeType = 'smoothstep';
             edge.type = edgeType;
         }
 

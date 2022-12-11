@@ -53,7 +53,6 @@ function Select({ value, handleId, nodeId }) {
                     </option>
                 ))}
             </select>
-            <Handle type="source" position="right" id={handleId} />
         </div>
     );
 }
@@ -65,9 +64,10 @@ function CustomNode({ id, data }) {
                 This is a <strong>custom node</strong>
             </div>
             <div className="custom-node__body">
-                {Object.keys(data.selects).map((handleId) => (
-                    <Select key={handleId} nodeId={id} value={data.selects[handleId]} handleId={handleId} />
-                ))}
+                <Handle type="source" position="right" className="!bg-[#15607a] !w-2 !h-4 !rounded-l-none -!right-2" />
+                <Handle type="target" position="left" className="!bg-[#65e0ba] !w-2 !h-4 !rounded-r-none -!left-2" />
+                <Handle type="target" position="top" className="!bg-[#65e0ba] !w-4 !h-2 !rounded-b-none -!top-2" />
+                <Handle type="source" position="bottom" className="!bg-[#15607a] !w-4 !h-2 !rounded-t-none -!bottom-2" />
             </div>
         </>
     );

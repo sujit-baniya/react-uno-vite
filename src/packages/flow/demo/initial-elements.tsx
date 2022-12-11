@@ -29,12 +29,6 @@ export const nodes = [
         id: '4',
         type: 'custom',
         position: {x: 100, y: 200},
-        data: {
-            selects: {
-                'handle-0': 'smoothstep',
-                'handle-1': 'smoothstep',
-            },
-        },
     },
     {
         id: '5',
@@ -66,22 +60,6 @@ export const nodes = [
         sourcePosition: Position.Right,
         targetPosition: Position.Left,
     },
-    {
-        id: '7',
-        type: 'default',
-        className: 'annotation',
-        data: {
-            label: (
-                <>
-                    On the bottom left you see the <strong>Controls</strong> and the bottom right the{' '}
-                    <strong>MiniMap</strong>. This is also just a node 🥳
-                </>
-            ),
-        },
-        draggable: false,
-        selectable: false,
-        position: {x: 150, y: 400},
-    },
 ];
 
 export const edges = [
@@ -92,7 +70,6 @@ export const edges = [
         source: '4',
         target: '5',
         type: 'smoothstep',
-        sourceHandle: 'handle-0',
         data: {
             selectIndex: 0,
         },
@@ -105,7 +82,6 @@ export const edges = [
         source: '4',
         target: '6',
         type: 'smoothstep',
-        sourceHandle: 'handle-1',
         data: {
             selectIndex: 1,
         },

@@ -9,6 +9,7 @@ import { getHostForElement } from '../../utils';
 import { addEdge } from '../../utils/graph';
 import { Position } from '../../types';
 import type { HandleProps, Connection, ReactFlowState } from '../../types';
+import { v4 as uuidv4 } from 'uuid';
 
 const alwaysValid = () => true;
 
@@ -42,7 +43,7 @@ const Handle = forwardRef<HTMLDivElement, HandleComponentProps>(
     const nodeId = useNodeId() as string;
     const { connectionStartHandle, connectOnClick, noPanClassName } = useStore(selector, shallow);
 
-    const handleId = id || null;
+    const handleId = id || uuidv4();
     const isTarget = type === 'target';
 
     const onConnectExtended = (params: Connection) => {

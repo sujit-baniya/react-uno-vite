@@ -18,6 +18,9 @@ const Sidebar = (props) => {
             <div className="dndnode output" onDragStart={(event) => onDragStart(event, 'output')} draggable>
                 Output Node
             </div>
+            <div className="dndnode custom" onDragStart={(event) => onDragStart(event, 'custom')} draggable>
+                Custom Node
+            </div>
         </aside>
     );
 };

@@ -127,7 +127,7 @@ const EdgeRenderer = (props: EdgeRendererProps) => {
                 devWarn(
                   `Couldn't create edge for ${!sourceHandle ? 'source' : 'target'} handle id: ${
                     !sourceHandle ? edge.sourceHandle : edge.targetHandle
-                  }; edge id: ${edge.id}. Help: https://reactflow.dev/error#800`
+                  }; edge id: ${edge.id}. Help: error#800`
                 );
 
                 return null;
