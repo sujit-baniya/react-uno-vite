@@ -1,9 +1,9 @@
-import ShapeFlow from "~/packages/flow/pro/Shapes";
+import OverviewFlow from "~/packages/flow/demo";
 
 const Drawflow = () => {
     return (
-        <div>
-            <ShapeFlow/>
+        <div className="h-full">
+            <OverviewFlow/>
         </div>
     )
 }
